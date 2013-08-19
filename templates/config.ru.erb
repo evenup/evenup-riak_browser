@@ -1,0 +1,8 @@
+$: << 'lib'
+require 'rubygems'
+
+require 'riakbrowser'
+
+set :environment, :development
+
+Rack::Handler::Thin.run RiakBrowser.new, :Port => <%= scope.lookupvar('port') %>
